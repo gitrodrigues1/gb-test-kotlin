@@ -12,3 +12,7 @@ com algumas modificações e uma abordagem simulando a utilização de microsser
 - **Product** - Microsserviço responsável por gerenciar os produtos
 - **Inventory** - Microsserviço responsável por gerenciar o estoque dos produtos
 
+### Próximos passos
+[ ] Implementar testes unitários
+
+[ ] Incluir a execução dos serviços via Docker
