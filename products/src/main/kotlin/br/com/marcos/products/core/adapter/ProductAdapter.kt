@@ -1,6 +1,6 @@
 package br.com.marcos.products.core.adapter
 
-import br.com.marcos.products.core.exceptions.BusinessRuleException
+import br.com.marcos.products.core.exceptions.BusinessLogicException
 import br.com.marcos.products.core.model.Product
 import br.com.marcos.products.core.port.IProductPort
 import br.com.marcos.products.entrypoint.dto.InventoryDto
@@ -28,12 +28,12 @@ class ProductAdapter(
 
     override fun getProductBySku(sku: Int): Product {
         return databaseProductAdapter.getProductBySku(sku)
-            ?: throw BusinessRuleException("Product not found")
+            ?: throw BusinessLogicException("Product not found")
     }
 
     override fun deleteProduct(sku: Int) {
         if(!databaseProductAdapter.deleteProduct(sku))
-            throw BusinessRuleException("Product not found")
+            throw BusinessLogicException("Product not found")
     }
 
     fun getInventoryStatus(sku: Int): List<InventoryDto> {

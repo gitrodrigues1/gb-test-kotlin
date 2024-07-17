@@ -1,6 +1,6 @@
 package br.com.marcos.products.infrastructure.database.sql
 
-import br.com.marcos.products.core.exceptions.BusinessRuleException
+import br.com.marcos.products.core.exceptions.BusinessLogicException
 import br.com.marcos.products.core.model.Product
 import org.springframework.stereotype.Repository
 
@@ -23,7 +23,7 @@ class DatabaseProductAdapter {
     fun updateProduct(sku: Int, product: Product): Product {
         val index = products.indexOfFirst { it.sku == sku }
         if (index == -1)
-            throw BusinessRuleException("Product not found")
+            throw BusinessLogicException("Product not found")
 
         products[index] = product
         return product
