@@ -8,7 +8,14 @@ com algumas modificações e uma abordagem simulando a utilização de microsser
 - Kotlin
 - Spring Boot
 
+### **Importante:**  
+Alguns conceitos e regras foram adotados apenas para fins de demonstração e desenvolvimento. Jamais refletiria o comportamento de um sistema real em ambiente de produção.
+
 ### Diagrama de Classes
+Apesar de ter sido proposto no projeto a utilizaçõa de um enpoint unico para obter dados de produto e de estoque e armazem,
+entendi que eles devem ser únicos e comunicarem entre si para obter as informações desejadas. Segue abaixo a minha proposta de criação.
+
+O diagrama de classes foi feito utilizando a ferramenta [Mermaid](https://mermaid-js.github.io/mermaid/#/)
 ```mermaid
 classDiagram
     class Product {
